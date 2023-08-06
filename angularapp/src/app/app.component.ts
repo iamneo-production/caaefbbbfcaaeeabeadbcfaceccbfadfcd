@@ -1,14 +1,3 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-root',
-//   templateUrl: './app.component.html',
-//   styleUrls: ['./app.component.css']
-// })
-// export class AppComponent {
-//   title = 'forex-converter';
-// }
-
 import { Component } from '@angular/core';
 
 @Component({
@@ -16,23 +5,12 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-
 export class AppComponent {
-  fromCurrency: string = 'USD';
-  toCurrency: string = 'USD';
-  amount: number = 0;
-  convertedAmount: number = 0;
-
-  forexRates: { id: string, value: number }[] = [
-    { "id":"USD",  "value": 1.126735},
-    { "id":"GBP", "value":0.876893},
-    { "id":"INR", "value":79.677056}
-  ];
+  fromCurrency: string = 'USD'; // Explicitly define type as string
+  toCurrency: string = 'USD'; // Explicitly define type as string
+  amount: number = 0; // Explicitly define type as number
 
   convertForex() {
-    const fromRate = this.forexRates.find(rate => rate.id === this.fromCurrency)?.value || 1;
-    const toRate = this.forexRates.find(rate => rate.id === this.toCurrency)?.value || 1;
-
-    this.convertedAmount = (this.amount / fromRate) * toRate;
+    // This function is not needed as the conversion is handled by the pipe directly in the template.
   }
 }
