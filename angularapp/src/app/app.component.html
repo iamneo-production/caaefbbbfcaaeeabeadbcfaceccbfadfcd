@@ -1,27 +1,26 @@
-<form (ngSubmit)="convertForex()" #converterForm="ngForm">
+<h1>Live Forex Converter</h1>
+
+<form #converterForm="ngForm" (ngSubmit)="convertForex()">
   <label for="fromCurrency">Source CCY:</label>
   <select id="fromCurrency" name="fromCurrency" [(ngModel)]="fromCurrency" required>
     <option value="USD">USD</option>
     <option value="GBP">GBP</option>
     <option value="INR">INR</option>
-  </select><br>
+  </select>
 
   <label for="toCurrency">Target CCY:</label>
   <select id="toCurrency" name="toCurrency" [(ngModel)]="toCurrency" required>
     <option value="USD">USD</option>
     <option value="GBP">GBP</option>
     <option value="INR">INR</option>
-  </select><br>
+  </select>
 
   <label for="amount">Amount (Rs):</label>
   <input type="number" id="amount" name="amount" [(ngModel)]="amount" required>
-  <br>
 
-  <button type="submit" id="submitButton">submitButton</button>
-  <br>
+  <button type="submit" id="submitButton">Convert</button>
 </form>
 
 <div id="result">
-  <label>Result Container: </label>
-  <p>{{ convertedAmount }}</p>
+  <p>Converted Amount: {{ amount | forex: fromCurrency: toCurrency | number: '1.2-2' }}</p>
 </div>
