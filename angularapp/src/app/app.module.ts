@@ -1,18 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // Add this line
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ForexPipe } from './forex.pipe';
+import { ForexPipe } from './forex.pipe'; // Import the ForexConversionPipe
 
 @NgModule({
   declarations: [
     AppComponent,
-    ForexPipe
+    ForexPipe // Add the ForexConversionPipe to the declarations array
   ],
   imports: [
     BrowserModule,
-    FormsModule // Add this line
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
