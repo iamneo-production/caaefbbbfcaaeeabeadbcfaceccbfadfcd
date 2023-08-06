@@ -1,6 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-const forexRates = {
+interface ForexRates {
+  [key: string]: number;
+}
+
+const forexRates: ForexRates = {
   "USD": 1.126735,
   "GBP": 0.876893,
   "INR": 79.677056
