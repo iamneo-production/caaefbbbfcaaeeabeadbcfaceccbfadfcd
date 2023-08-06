@@ -21,6 +21,6 @@
   </form>
 
   <div id="result">
-    Converted Amount: {{ amount | forexConversion: fromCurrency: toCurrency | number: '1.2-2' }}
+    Converted Amount: {{ amount | conversion: fromCurrency: toCurrency | number: '1.2-2' }}
   </div>
 </div>

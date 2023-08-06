@@ -1,19 +1,27 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Component, Pipe, PipeTransform } from '@angular/core';
 
-const forexRates = {
-  "USD": 1.126735,
-  "GBP": 0.876893,
-  "INR": 79.677056
-};
 
-@Pipe({
-  name: 'forex'
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
 })
-export class ForexPipe implements PipeTransform {
-  transform(amount: number, fromCurrency: string, toCurrency: string): number {
-    const fromRate = forexRates[fromCurrency] || 1;
-    const toRate = forexRates[toCurrency] || 1;
+export class conversion {
+  fromCurrency: string = 'USD';
+  toCurrency: string = 'USD';
+  amount: number = 0;
+  convertedAmount: number = 0;
 
-    return (amount / fromRate) * toRate;
+  forexRates: { id: string, value: number }[] = [
+    { "id": "USD", "value": 1.126735 },
+    { "id": "GBP", "value": 0.876893 },
+    { "id": "INR", "value": 79.677056 }
+  ];
+
+  convertForex() {
+    const fromRate = this.forexRates.find(rate => rate.id === this.fromCurrency)?.value || 1;
+    const toRate = this.forexRates.find(rate => rate.id === this.toCurrency)?.value || 1;
+
+    this.convertedAmount = (this.amount / fromRate) * toRate;
   }
 }
