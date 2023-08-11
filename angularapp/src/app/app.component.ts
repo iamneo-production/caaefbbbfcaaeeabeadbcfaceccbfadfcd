@@ -10,7 +10,9 @@ export class AppComponent {
   toCurrency: string = 'USD';
   amount: number = 0;
 
-  convertForex() {
-    // This function is not needed as the conversion is handled by the pipe directly in the template.
-  }
+  forexRates: { id: string, value: number }[] = [
+    { "id": "USD", "value": 1.126735 },
+    { "id": "GBP", "value": 0.876893 },
+    { "id": "INR", "value": 79.677056 }
+  ];
 }
