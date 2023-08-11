@@ -9,7 +9,7 @@ export class AppComponent {
   fromCurrency: string = 'USD';
   toCurrency: string = 'USD';
   amount: number = 0;
-  convertedAmount: number = 0; // Add convertedAmount property
+  convertedAmount: number = 0;
 
   forexRates: { id: string, value: number }[] = [
     { "id": "USD", "value": 1.126735 },

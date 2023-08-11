@@ -2,12 +2,16 @@
   <form #converterForm="ngForm" (ngSubmit)="convertForex()">
     <label for="fromCurrency">Source CCY:</label>
     <select id="fromCurrency" name="fromCurrency" [(ngModel)]="fromCurrency" required>
-      <option *ngFor="let rate of forexRates" [value]="rate.id">{{ rate.id }}</option>
+      <option value="USD">USD</option>
+      <option value="GBP">GBP</option>
+      <option value="INR">INR</option>
     </select>
 
     <label for="toCurrency">Target CCY:</label>
     <select id="toCurrency" name="toCurrency" [(ngModel)]="toCurrency" required>
-      <option *ngFor="let rate of forexRates" [value]="rate.id">{{ rate.id }}</option>
+      <option value="USD">USD</option>
+      <option value="GBP">GBP</option>
+      <option value="INR">INR</option>
     </select>
 
     <label for="amount">Amount(Rs):</label>
@@ -17,6 +21,6 @@
   </form>
 
   <div id="result">
-    Converted Amount: <span id="resValue">{{ convertedAmount | number: '1.2-2' }}</span>
+    <span id="resValue">Converted Amount: {{ convertedAmount | number: '1.2-2' }}</span>
   </div>
 </div>
