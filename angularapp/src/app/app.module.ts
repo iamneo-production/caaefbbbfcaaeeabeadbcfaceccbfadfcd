@@ -1,18 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // Add this line
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { conversion  } from './forex.pipe';
+import { ConversionPipe } from './forex.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    conversion
+    ConversionPipe
   ],
   imports: [
     BrowserModule,
-    FormsModule // Add this line
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
