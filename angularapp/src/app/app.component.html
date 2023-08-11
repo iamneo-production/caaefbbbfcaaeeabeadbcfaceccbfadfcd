@@ -21,6 +21,6 @@
   </form>
 
   <div id="result">
-    Converted Amount: {{ amount | forexRates: fromCurrency: toCurrency | number: '1.2-2' }}
+    Converted Amount: <span id="resValue">{{ amount | forexRates: fromCurrency: toCurrency | number: '1.2-2' }}</span>
   </div>
 </div>
