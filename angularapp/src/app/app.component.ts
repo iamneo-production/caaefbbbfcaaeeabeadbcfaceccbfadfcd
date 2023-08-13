@@ -3,16 +3,29 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  fromCurrency: string = 'USD';
-  toCurrency: string = 'USD';
-  amount: number = 0;
+  title = 'pipes';
+  fromCurr :String = '';
+  toCurr   :string = '';
+  amount !:number;
+  result: string = 'sample';
+  show:boolean = false;
 
-  forexRates: { id: string, value: number }[] = [
-    { "id": "USD", "value": 1.126735 },
-    { "id": "GBP", "value": 0.876893 },
-    { "id": "INR", "value": 79.677056 }
-  ];
+
+  showResult()
+  {
+    console.log(this.fromCurr);
+    console.log(this.toCurr);
+    console.log(this.amount);
+    if(this.fromCurr !='' && this.toCurr != '')
+    {
+      this.show = true;
+    }
+    else
+    {
+      this.show = true;
+    }
+  }
 }
